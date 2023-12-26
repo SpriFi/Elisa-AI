@@ -1,13 +1,59 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
-import md from "markdown-it";
+// Import statements
 
 // Initialize the model
 const genAI = new GoogleGenerativeAI(`${import.meta.env.VITE_API_KEY}`);
-
 const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
 let history = [];
 
+// User chat div function
+export const userDiv = (data) => {
+  return `
+    <!-- User Chat -->
+    <div class="flex items-center gap-2 justify-end">
+      <p class="bg-gemDeep text-white p-1 rounded-md-user shadow-md">
+        ${data}
+      </p>
+      <img src="user.jpg" alt="user icon" class="w-10 h-10 rounded-full" />
+    </div>
+  `;
+};
+
+// AI chat div function
+export const aiDiv = (data) => {
+  return `
+    <!-- AI Chat -->
+    <div class="flex gap-2 justify-start">
+      <img
+        src="https://cdn.hashnode.com/res/hashnode/image/upload/v1679548216146/UVfbFzJqZ.png?auto=compress"
+        alt="user icon"
+        class="w-10 h-10"
+      />
+      <div class="bg-gemRegular/40 text-gemDeep p-1 rounded-md-ai shadow-md whitespace-pre-wrap">
+        ${data}
+      </div>
+    </div>
+  `;
+};
+
+// Typing indicator div function
+export const aiTypingIndicator = () => {
+  return `
+    <!-- AI Typing Indicator -->
+    <div class="flex gap-2 justify-start">
+      <img
+        src="https://cdn.hashnode.com/res/hashnode/image/upload/v1679548216146/UVfbFzJqZ.png?auto=compress"
+        alt="user icon"
+        class="w-10 h-10"
+      />
+      <div class="bg-gemRegular/40 text-gemDeep p-1 rounded-md-ai shadow-md whitespace-pre-wrap">
+        Typing...
+      </div>
+    </div>
+  `;
+};
+
+// Function to get AI response
 async function getResponse(prompt) {
   const chat = await model.startChat({ history: history });
   const result = await chat.sendMessage(prompt);
@@ -18,40 +64,7 @@ async function getResponse(prompt) {
   return text;
 }
 
-// user chat div
-export const userDiv = (data) => {
-  return `
-  <!-- User Chat -->
-          <div class="flex items-center gap-2 justify-end">
-            <p class="bg-gemDeep text-white p-1 rounded-md-user shadow-md  ">
-              ${data}
-            </p>
-            <img
-              src="user.jpg"
-              alt="user icon"
-              class="w-10 h-10 rounded-full"
-            />
-          </div>
-  `;
-};
-
-// AI Chat div
-export const aiDiv = (data) => {
-  return `
-  <!-- AI Chat -->
-          <div class="flex gap-2 justify-start">
-          <img
-              src="https://cdn.hashnode.com/res/hashnode/image/upload/v1679548216146/UVfbFzJqZ.png?auto=compress"
-              alt="user icon"
-              class="w-10 h-10"
-            />
-            <pre class="bg-gemRegular/40 text-gemDeep p-1 rounded-md-ai shadow-md whitespace-pre-wrap">
-              ${data}
-            </pre>
-          </div>
-  `;
-};
-
+// Function to handle form submission
 async function handleSubmit(event) {
   event.preventDefault();
 
@@ -67,9 +80,15 @@ async function handleSubmit(event) {
 
   chatArea.innerHTML += userDiv(prompt);
   userMessage.value = "";
+
+  // Add AI typing indicator
+  chatArea.innerHTML += aiTypingIndicator();
+
   const aiResponse = await getResponse(prompt);
   let md_text = md().render(aiResponse);
-  chatArea.innerHTML += aiDiv(md_text);
+
+  // Remove typing indicator and add actual AI response
+  chatArea.innerHTML = chatArea.innerHTML.replace(aiTypingIndicator(), aiDiv(md_text));
 
   let newUserRole = {
     role: "user",
@@ -86,6 +105,7 @@ async function handleSubmit(event) {
   console.log(history);
 }
 
+// Event listeners
 const chatForm = document.getElementById("chat-form");
 chatForm.addEventListener("submit", handleSubmit);
 
