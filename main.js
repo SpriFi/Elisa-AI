@@ -13,6 +13,16 @@ async function getResponse(prompt) {
   const result = await chat.sendMessage(prompt);
   const response = await result.response;
   const text = response.text();
+  
+  // Use streaming with multi-turn conversations (like chat)
+const result = await model.sendMessageStream(msg);
+
+let text = '';
+for await (const chunk of result.stream) {
+  const chunkText = chunk.text();
+  console.log(chunkText);
+  text += chunkText;
+}
 
   console.log(text);
   return text;
@@ -92,3 +102,5 @@ chatForm.addEventListener("submit", handleSubmit);
 chatForm.addEventListener("keyup", (event) => {
   if (event.keyCode === 13) handleSubmit(event);
 });
+
+
