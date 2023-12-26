@@ -41,9 +41,9 @@ export const aiDiv = (data) => {
   <!-- AI Chat -->
           <div class="flex gap-2 justify-start">
           <img
-              src="chat-bot.jpg"
+              src="https://cdn.hashnode.com/res/hashnode/image/upload/v1679548216146/UVfbFzJqZ.png?auto=compress"
               alt="user icon"
-              class="w-10 h-10 rounded-full"
+              class="w-10 h-10"
             />
             <pre class="bg-gemRegular/40 text-gemDeep p-1 rounded-md shadow-md whitespace-pre-wrap">
               ${data}
