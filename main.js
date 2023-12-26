@@ -23,7 +23,7 @@ export const userDiv = (data) => {
   return `
   <!-- User Chat -->
           <div class="flex items-center gap-2 justify-end">
-            <p class="bg-gemDeep text-white p-1 rounded-md shadow-md  ">
+            <p class="bg-gemDeep text-white p-1 rounded-md-user shadow-md  ">
               ${data}
             </p>
             <img
@@ -45,7 +45,7 @@ export const aiDiv = (data) => {
               alt="user icon"
               class="w-10 h-10"
             />
-            <pre class="bg-gemRegular/40 text-gemDeep p-1 rounded-md shadow-md whitespace-pre-wrap">
+            <pre class="bg-gemRegular/40 text-gemDeep p-1 rounded-md-ai shadow-md whitespace-pre-wrap">
               ${data}
             </pre>
           </div>
