@@ -22,15 +22,15 @@ async function getResponse(prompt) {
 export const userDiv = (data) => {
   return `
   <!-- User Chat -->
-          <div class="flex items-center gap-2 justify-start">
+          <div class="flex items-center gap-2 justify-end">
+            <p class="bg-gemDeep text-white p-1 rounded-md shadow-md  ">
+              ${data}
+            </p>
             <img
               src="user.jpg"
               alt="user icon"
               class="w-10 h-10 rounded-full"
             />
-            <p class="bg-gemDeep text-white p-1 rounded-md shadow-md  ">
-              ${data}
-            </p>
           </div>
   `;
 };
@@ -39,15 +39,15 @@ export const userDiv = (data) => {
 export const aiDiv = (data) => {
   return `
   <!-- AI Chat -->
-          <div class="flex gap-2 justify-end">
-            <pre class="bg-gemRegular/40 text-gemDeep p-1 rounded-md shadow-md whitespace-pre-wrap">
-              ${data}
-            </pre>
-            <img
+          <div class="flex gap-2 justify-start">
+          <img
               src="chat-bot.jpg"
               alt="user icon"
               class="w-10 h-10 rounded-full"
             />
+            <pre class="bg-gemRegular/40 text-gemDeep p-1 rounded-md shadow-md whitespace-pre-wrap">
+              ${data}
+            </pre>
           </div>
   `;
 };
