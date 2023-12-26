@@ -132,8 +132,7 @@ strong {
 
 code,
 kbd,
-samp,
-pre {
+samp {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   /* 1 */
   font-feature-settings: normal;
@@ -143,7 +142,16 @@ pre {
   font-size: 1em;
   /* 4 */
 }
-
+pre {
+  font-family: inherit;
+  /* 1 */
+  font-feature-settings: normal;
+  /* 2 */
+  font-variation-settings: normal;
+  /* 3 */
+  font-size: 1em;
+  /* 4 */
+}
 /*
 Add the correct font size in all browsers.
 */
