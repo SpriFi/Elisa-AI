@@ -62,6 +62,9 @@ body {
   /* 1 */
   line-height: inherit;
   /* 2 */
+  background: linear-gradient(134deg,#00425e 0%,#001a3f 43%,#421438 77%) !important;
+  background-attachment: fixed !important;
+  background-position: top;
 }
 
 /*
@@ -239,6 +242,7 @@ button,
   /* 2 */
   background-image: none;
   /* 2 */
+  width: auto !important;
 }
 
 /*
@@ -365,6 +369,8 @@ Prevent resizing textareas horizontally by default.
 
 textarea {
   resize: vertical;
+  height: 40px;
+  max-height: 200px;
 }
 
 /*
@@ -622,7 +628,7 @@ video {
 }
 
 .whitespace-pre-wrap {
-  white-space: pre-wrap;
+  white-space: normal;
 }
 
 .rounded-lg {
@@ -642,22 +648,22 @@ video {
 }
 
 .bg-gemLight {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 245 224 / var(--tw-bg-opacity));
+  //--tw-bg-opacity: 1;
+  background-color: #08090b33;
 }
 
 .bg-gemRegular {
-  --tw-bg-opacity: 1;
-  background-color: rgb(161 217 155 / var(--tw-bg-opacity));
+  //--tw-bg-opacity: 1;
+  background-color: #ffffff33;
 }
 
 .bg-gemDeep {
-  --tw-bg-opacity: 1;
-  background-color: rgb(49 163 84 / var(--tw-bg-opacity));
+  //--tw-bg-opacity: 1;
+  background-color: #ffffff1a;
 }
 
 .bg-gemRegular\/40 {
-  background-color: rgb(161 217 155 / 0.4);
+  background-color: #ffffff1a;
 }
 
 .p-3 {
@@ -697,7 +703,7 @@ video {
 
 .text-gemDeep {
   --tw-text-opacity: 1;
-  color: rgb(49 163 84 / var(--tw-text-opacity));
+  color: #FFFFFF;
 }
 
 .text-white {
