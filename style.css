@@ -551,7 +551,7 @@ video {
 }
 
 .h-10 {
-  height: 2.5rem;
+  height: 30px;
 }
 
 .h-fit {
@@ -576,7 +576,7 @@ video {
 }
 
 .w-10 {
-  width: 2.5rem;
+  width: 30px;
 }
 
 .flex-1 {
