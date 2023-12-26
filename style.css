@@ -647,10 +647,12 @@ video {
   border-radius: 9999px;
 }
 
-.rounded-md {
-  border-radius: 0.375rem;
+.rounded-md-user {
+  border-radius: 25px 0 25px 25px;
 }
-
+.rounded-md-ai {
+  border-radius: 0 25px 25px 25px;
+}
 .rounded {
   border-radius: 0.25rem;
 }
