@@ -10,9 +10,7 @@ let history = [];
 
 async function getResponse(prompt) {
   const chat = await model.startChat({ history: history });
-  const result = await chat.sendMessage(prompt);
-  const response = await result.response;
-  const text = response.text();
+ 
   
   // Use streaming with multi-turn conversations (like chat)
 const result = await model.sendMessageStream(msg);
@@ -24,8 +22,7 @@ for await (const chunk of result.stream) {
   text += chunkText;
 }
 
-  console.log(text);
-  return text;
+
 }
 
 // user chat div
