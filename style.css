@@ -62,9 +62,9 @@ body {
   /* 1 */
   line-height: inherit;
   /* 2 */
-  background: linear-gradient(134deg,#00425e 0%,#001a3f 43%,#421438 77%) !important;
-  background-attachment: fixed !important;
-  background-position: top;
+  //background: linear-gradient(134deg,#00425e 0%,#001a3f 43%,#421438 77%) !important;
+  //background-attachment: fixed !important;
+  //background-position: top;
 }
 
 /*
