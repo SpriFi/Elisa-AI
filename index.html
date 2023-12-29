@@ -63,11 +63,11 @@
 
       // Hide send button, show receive div
       sendButton.style.display = "none";
-      receiveDiv.style.display = "block";
+      receiveDiv.style.display = "inline-block";
 
       // Revert after 3 seconds
       setTimeout(function() {
-        sendButton.style.display = "block";
+        sendButton.style.display = "inline-block";
         receiveDiv.style.display = "none";
       }, 3000);
     }
