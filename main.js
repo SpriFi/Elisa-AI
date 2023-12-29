@@ -48,34 +48,6 @@ export const aiDiv = (data) => {
   `;
 };
 
-// Function to simulate AI typing
-function simulateTyping(callback) {
-  // Show typing indicator
-  showTypingIndicator();
-
-  // Simulate typing logic here (no artificial delay)
-  // This is where you might perform actual asynchronous operations
-
-  // You might want to add a delay here for simulation purposes
-  setTimeout(function () {
-    // Hide typing indicator
-    hideTypingIndicator();
-
-    // Call the provided callback
-    callback();
-  }, 2000); // Adjust the timeout based on your desired duration
-}
-
-// Function to show the typing indicator
-function showTypingIndicator() {
-  document.getElementById('typing-indicator').style.display = 'block';
-}
-
-// Function to hide the typing indicator
-function hideTypingIndicator() {
-  document.getElementById('typing-indicator').style.display = 'none';
-}
-
 // Function to display user message
 function displayUserMessage(message) {
   // Display user message logic here
@@ -103,12 +75,8 @@ async function handleSubmit(event) {
   chatArea.innerHTML += userDiv(prompt);
   userMessage.value = "";
 
-  // Change the "Send" button text to "Typing..."
-  const sendButton = document.getElementById('send-button');
-  sendButton.textContent = 'Typing...';
-
   // Simulate AI typing and response
-  simulateTyping(function () {
+  simulateTyping(async function () {
     // Display AI response
     const aiResponse = await getResponse(prompt);
     let md_text = md().render(aiResponse);
@@ -127,12 +95,6 @@ async function handleSubmit(event) {
     history.push(newAIRole);
 
     console.log(history);
-
-    // Restore the "Send" button text
-    sendButton.textContent = 'Send';
-
-    // Clear the input field
-    document.getElementById('prompt').value = '';
   });
 }
 
@@ -143,3 +105,33 @@ chatForm.addEventListener("submit", handleSubmit);
 chatForm.addEventListener("keyup", (event) => {
   if (event.keyCode === 13) handleSubmit(event);
 });
+
+// v2Function to simulate AI typing
+function simulateTyping(callback) {
+// Show typing indicator
+showTypingIndicator();
+
+// Simulate typing logic here (no artificial delay)
+// This is where you might perform actual asynchronous operations
+
+// You might want to add a delay here for simulation purposes
+setTimeout(function () {
+// Hide typing indicator
+hideTypingIndicator();
+
+// Call the provided callback
+callback();
+}, 2000); // Adjust the timeout based on your desired duration
+}
+// Function to show the typing indicator
+function showTypingIndicator() {
+  document.getElementById('typing-indicator').style.display = 'block';
+  document.getElementById('submit-indicator').style.display = 'none';
+}
+
+// Function to hide the typing indicator
+function hideTypingIndicator() {
+  document.getElementById('typing-indicator').style.display = 'none';
+  document.getElementById('submit-indicator').style.display = 'block';
+  
+}
