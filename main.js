@@ -68,11 +68,13 @@ callback();
 // Function to show the typing indicator
 function showTypingIndicator() {
   document.getElementById('typing-indicator').style.display = 'block';
+  document.getElementById('submit-indicator').style.display = 'none';
 }
 
 // Function to hide the typing indicator
 function hideTypingIndicator() {
   document.getElementById('typing-indicator').style.display = 'none';
+  
 }
 
 // Function to display user message
