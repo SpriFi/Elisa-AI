@@ -94,4 +94,53 @@ chatForm.addEventListener("keyup", (event) => {
   if (event.keyCode === 13) handleSubmit(event);
 });
 
+//typing
+function simulateTyping(callback) {
+  // Simulate typing logic here
+  setTimeout(callback, 2000); // Adjust the timeout based on your typing simulation speed
+}
 
+// Function to show the typing indicator
+function showTypingIndicator() {
+  document.getElementById('typing-indicator').style.display = 'block';
+}
+
+// Function to hide the typing indicator
+function hideTypingIndicator() {
+  document.getElementById('typing-indicator').style.display = 'none';
+}
+
+// Function to display user message
+function displayUserMessage(message) {
+  // Display user message logic here
+}
+
+// Function to display bot message
+function displayBotMessage(message) {
+  // Display bot message logic here
+}
+
+document.getElementById('chat-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  // Get the user input
+  const userInput = document.getElementById('prompt').value;
+
+  // Display user message
+  displayUserMessage(userInput);
+
+  // Show typing indicator
+  showTypingIndicator();
+
+  // Simulate AI typing and response
+  simulateTyping(function () {
+    // Hide typing indicator
+    hideTypingIndicator();
+
+    // Display AI response
+    displayBotMessage("This is Elisa's response...");
+
+    // Clear the input field
+    document.getElementById('prompt').value = '';
+  });
+});
