@@ -48,19 +48,19 @@ export const aiDiv = (data) => {
   `;
 };
 
-// Function to simulate AI typing
+//v1 Function to simulate AI typing
 function simulateTyping(callback) {
-  // Show typing indicator
-  showTypingIndicator();
+// Show typing indicator
+showTypingIndicator();
 
-  // Simulate typing logic here
-  setTimeout(function () {
-    // Hide typing indicator
-    hideTypingIndicator();
+// Simulate typing logic here (no artificial delay)
+// This is where you might perform actual asynchronous operations
 
-    // Call the provided callback
-    callback();
-  }, 2000); // Adjust the timeout based on your typing simulation speed
+// Hide typing indicator immediately
+hideTypingIndicator();
+
+// Call the provided callback
+callback();
 }
 
 // Function to show the typing indicator
