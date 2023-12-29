@@ -121,7 +121,7 @@ hideTypingIndicator();
 
 // Call the provided callback
 callback();
-}, 2000); // Adjust the timeout based on your desired duration
+}, 6000); // Adjust the timeout based on your desired duration
 }
 // Function to show the typing indicator
 function showTypingIndicator() {
