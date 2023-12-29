@@ -54,15 +54,13 @@ function simulateTyping(callback) {
   showTypingIndicator();
 
   // Simulate typing logic here
-  // For simplicity, using a fixed timeout, adjust based on your needs
   setTimeout(function () {
-    // You can also use a condition to determine when the typing is actually done
-    // For example, if the AI response is fetched from an API, you can hide the indicator in the callback
+    // Hide typing indicator
     hideTypingIndicator();
 
     // Call the provided callback
     callback();
-  }, 4000); // Adjust the timeout based on your typing simulation speed
+  }, 2000); // Adjust the timeout based on your typing simulation speed
 }
 
 // Function to show the typing indicator
