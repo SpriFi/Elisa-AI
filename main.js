@@ -107,31 +107,17 @@ chatForm.addEventListener("keyup", (event) => {
 });
 
 // v2Function to simulate AI typing
-function simulateTyping(callback) {
-// Show typing indicator
-showTypingIndicator();
+function toggleButton() {
+      var sendButton = document.getElementById("send-indicator");
+      var receiveDiv = document.getElementById("typing-indicator");
 
-// Simulate typing logic here (no artificial delay)
-// This is where you might perform actual asynchronous operations
+      // Hide send button, show receive div
+      send-indicator.style.display = "none";
+      typing-indicator.style.display = "block";
 
-// You might want to add a delay here for simulation purposes
-setTimeout(function () {
-// Hide typing indicator
-hideTypingIndicator();
-
-// Call the provided callback
-callback();
-}, 2000); // Adjust the timeout based on your desired duration
-}
-// Function to show the typing indicator
-function showTypingIndicator() {
-  document.getElementById('typing-indicator').style.display = 'block';
-  document.getElementById('submit-indicator').style.display = 'none';
-}
-
-// Function to hide the typing indicator
-function hideTypingIndicator() {
-  document.getElementById('typing-indicator').style.display = 'none';
-  document.getElementById('submit-indicator').style.display = 'block';
-  
-}
+      // Revert after 3 seconds
+      setTimeout(function() {
+        send-indicator.style.display = "block";
+        typing-indicator.style.display = "none";
+      }, 3000);
+    }
