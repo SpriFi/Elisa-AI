@@ -44,7 +44,6 @@ export const aiDiv = (data) => {
       <pre class="bg-gemRegular/40 text-gemDeep p-1 rounded-md-ai shadow-md whitespace-pre-wrap">
         ${data}
       </pre>
-      <div id="typing-indicator" style="display: none; color: #cc98d4;">Typing...</div>
     </div>
   `;
 };
