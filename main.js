@@ -113,11 +113,11 @@ function toggleButton() {
 
       // Hide send button, show receive div
       send-indicator.style.display = "none";
-      typing-indicator.style.display = "inline-block";
+      typing-indicator.style.display = "block";
 
       // Revert after 3 seconds
       setTimeout(function() {
-        send-indicator.style.display = "inline-block";
+        send-indicator.style.display = "block";
         typing-indicator.style.display = "none";
       }, 5000);
     }
