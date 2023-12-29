@@ -74,6 +74,7 @@ function showTypingIndicator() {
 // Function to hide the typing indicator
 function hideTypingIndicator() {
   document.getElementById('typing-indicator').style.display = 'none';
+  document.getElementById('submit-indicator').style.display = 'block';
   
 }
 
