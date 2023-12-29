@@ -119,5 +119,5 @@ function toggleButton() {
       setTimeout(function() {
         send-indicator.style.display = "block";
         typing-indicator.style.display = "none";
-      }, 3000);
+      }, 5000);
     }
