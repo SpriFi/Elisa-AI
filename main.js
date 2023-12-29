@@ -106,18 +106,3 @@ chatForm.addEventListener("keyup", (event) => {
   if (event.keyCode === 13) handleSubmit(event);
 });
 
-// v2Function to simulate AI typing
-function toggleButton() {
-      var sendButton = document.getElementById("send-indicator");
-      var receiveDiv = document.getElementById("typing-indicator");
-
-      // Hide send button, show receive div
-      send-indicator.style.display = "none";
-      typing-indicator.style.display = "block";
-
-      // Revert after 3 seconds
-      setTimeout(function() {
-        send-indicator.style.display = "block";
-        typing-indicator.style.display = "none";
-      }, 5000);
-    }
